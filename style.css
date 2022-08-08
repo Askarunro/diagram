@@ -12,10 +12,11 @@
   top: 220px;
   left: 21%;
   top: 129px;
-    left: -4px;
+  left: -4px;
 }
 
 body {
+  font-family: "Montserrat", sans-serif;
   padding: 0;
   margin: 0;
 }
@@ -60,7 +61,7 @@ p {
 }
 
 .hero__title {
-  width: 500px;
+  width: 550px;
   text-align: center;
   font-style: normal;
   font-weight: 400;
@@ -70,11 +71,17 @@ p {
 }
 
 .container {
-  padding: 0 200px;
+  padding: 0 20px;
 }
 
-.garmony {
+@media screen and (min-width: 1200px) {
+  .container {
+    padding: 0 200px;
+  }
 }
+
+/* .garmony {
+} */
 
 .garnomy__img {
   width: 100%;
@@ -94,8 +101,16 @@ p {
 
 .garmony__wrapper {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-column-gap: 110px;
+  grid-template-columns: 1fr;
+  grid-row-gap: 50px;
+}
+
+@media screen and (min-width: 1200px) {
+  .garmony__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 110px;
+  }
 }
 
 .offer__wrapper {
@@ -124,8 +139,8 @@ p {
 
 .about-method__wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 180px;
+  grid-template-columns: 1fr;
+  grid-row-gap: 60px;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -142,10 +157,17 @@ p {
   color: #363636;
 }
 
+@media screen and (min-width: 1200px) {
+  .about-method__wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 180px;
+  }
+}
+
 .balance__wrapper {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-column-gap: 120px;
+  grid-template-columns: 1fr;
+  grid-row-gap: 60px;
 }
 
 .invisible {
@@ -162,16 +184,16 @@ p {
   text-align: center;
 }
 
-.balance__box{
+.balance__box {
   position: relative;
 }
 
-.balance__img{
+.balance__img {
   width: 100%;
   object-fit: contain;
 }
 
-.balance__img--wrapper{
+.balance__img--wrapper {
   width: 100%;
 }
 
@@ -190,20 +212,24 @@ p {
 }
 
 .balance__item--inner {
-  visibility: hidden;
   display: flex;
+  max-height: 0;
+  overflow: hidden;
   flex-direction: column;
   grid-row-gap: 50px;
-  height: 0;
-  transition: height 0.6s;
+  opacity: 0.2;
+  transition: all 0.6s ease;
 }
 .balance__item--inner.visible {
-  visibility: visible;
-  height: fit-content;
   padding-top: 50px;
+  opacity: 1;
+  transition: all 0.6s ease;
 }
 
 .balance__item--inner p {
+  padding: 40px 30px;
+  border-radius: 10px;
+  background-color: #f8f8f8;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
@@ -212,8 +238,32 @@ p {
 }
 
 .balance__item .rangeslider--horizontal {
-  width: 300px;
+  position: relative;
+  /* width: 300px; */
+  width: 100%;
   height: 4px;
+}
+
+.balance__item .rangeslider--horizontal:before {
+  content: "0";
+  position: absolute;
+  top: 100%;
+  left: 10px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 60px;
+  color: #d9d9d9;
+}
+
+.balance__item .rangeslider--horizontal:after {
+  content: "10";
+  position: absolute;
+  top: 100%;
+  right: 4px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 60px;
+  color: #d9d9d9;
 }
 
 .balance__item .rangeslider__handle {
@@ -227,9 +277,15 @@ p {
 }
 
 @media screen and (min-width: 1200px) {
-  .balance__item .rangeslider--horizontal {
-    width: 450px;
+  .balance__wrapper {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 120px;
   }
+  /* .balance__item .rangeslider--horizontal {
+    width: 450px;
+    width: 450px;
+  } */
 }
 
 .balance__item .rangeslider__handle:hover,
@@ -251,19 +307,19 @@ p {
   line-height: 24px;
   color: #363636;
   cursor: pointer;
-  transition: all .5s;
+  transition: font-weight 0.3s;
 }
 
 .balance__caption:before {
-  content: '';
-  position:absolute;
+  content: "";
+  position: absolute;
   right: 0;
   width: 11px;
   height: 20px;
   background-image: url(./arrow.svg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  transition: all .5s;
+  transition: all 0.3s;
 }
 
 .balance__caption.active {
@@ -293,9 +349,21 @@ p {
 }
 .sliderAll {
   height: 100px;
-  width: 50%;
+  width: 100%;
   /* //border:1px solid; */
   float: left;
+}
+
+@media screen and (min-width: 768px) {
+  .sliderAll {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .sliderAll {
+    width: 100%;
+  }
 }
 
 .rangeslider__fill {
@@ -338,6 +406,7 @@ p {
   transform: translateX(-50%); */
   font-size: 20px;
   line-height: 60px;
+  z-index: 2;
   /* border: 1px solid #ccc;
   display: block;
   padding: 5px;
