@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.css">
+    <link rel="stylesheet" href="style.css">
+
+  
+<body>
+  <header></header>
+  <main class="main">
+    <section class="hero">
+      <h1 class="hero__title">
+        Життя в балансі
+        Life in balance
+        </h1>
+    </section>
+    <section class="garmony">
+      <div class="container">
+        <div class="garmony__wrapper">
+          <div class="garnomy__img--wrapper">
+            <img src="./garmony.png" alt="icon life-work balance" class="garnomy__img">
+          </div>
+          <div class="garmony__info">
+              <div class="garmony__info--wrapper">
+                <p class="garmony__text">
+                  Підтримка life-work balance стає обов’язковою 
+                  складовою нашого життя у сьогоднішніх реаліях. 
+                  Ще у 2021 р. було проведено соціологічне дослідження, 
+                  згідно з даними якого 57% українців загалом були 
+                  задоволені своїм життям, а 21% – не задоволені. 
+                  Тобто, життєвий баланс у значної кількості 
+                  наших співвітчизників – порушено. 
+                </p>
+                <p class="garmony__text">
+                  Баланс у житті можливий, якщо ви керуєте своїм 
+                  сьогоденням та майбутнім, коли визначаєте, чому 
+                  і скільки часу приділити увагу, тоді просто 
+                  привести свою життєдіяльність до балансу. 
+                  Життєвий баланс – цікаве, активне життя за своїми 
+                  правилами, а не комфортне виживання. Щоб жити 
+                  своє життя цікаво, необхідно розвиватися, 
+                  пробувати нове, щодня бути захопленим мінімум 
+                  одним-двома заняттями, які приносять Вам радість.
+                </p>
+              </div>
+              <a href="javascript:void(0);">Читати більше</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="offer">
+      <div class="container">
+        <div class="offer__wrapper">
+          <h2 class="offer__title">Пропонуємо зробити невеличкий аудит ключових сфер вашого життя, і <span>“Колесо життєвого балансу”</span> вам у цьому допоможе. </h2>
+        </div>
+      </div>
+    </section>
+    <section class="about-method">
+      <div class="container">
+        <div class="about-method__wrapper">
+          <div class="about-method__box">
+              <h3 class="about-method__title">Метод «Колесо балансу життя»</h3>
+              <p>
+                Приведення до ладу всіх сфер свого життя – 
+                то є запорука досягнення балансу, гармонії 
+                вашого життя, якими всі так марять. 
+                Щоб оцінити, в якому стані знаходяться важливі для вас частини життя – скористайтеся цим інструментом.
+                </p>
+                <p>
+                  Колесо балансу життєвих цінностей – це методика аналізу та планування життя. 
+                </p>
+          </div>
+          <div class="about-method__box">
+            <h3 class="about-method__title">Як розраховувати «Коло» онлайн?</h3>
+              <p>
+                Коло розбиваємо на 8 секцій, як піцу. Кожен сектор – одна сфера життя, 
+                які мають велике значення для успішності та щастя. 
+              </p>
+              <p>
+                Оцінюєте поточний стан кожної сфери від 1 до 10 балів (
+                  1 – жах, 10 – все чудово). 1 – всередині кола, 
+                  10 – на зовнішньому колі. У підсумку, отримуєте коло життєвого балансу вашого життя.
+              </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="balance">
+      <div class="container">
+      <h2 class="balance__title">Оберіть ваш рівень на шкалі</h2>
+
+          <div class="balance__wrapper">
+            <div class="balance__box">
+              <ul class="balance__list">
+                <li class="balance__item">
+                  <h3 class="balance__caption">Метод «Колесо балансу життя»</h3>
+                  <div class="balance__item--inner">
+                    <p>
+                      Приведення до ладу всіх сфер свого життя – 
+                      то є запорука досягнення балансу, гармонії 
+                      вашого життя, якими всі так марять. 
+                      Щоб оцінити, в якому стані знаходяться важливі
+                       для вас частини життя – скористайтеся цим інструментом.
+                    </p>
+                  </div>
+                </li>
+                <li class="balance__item">
+                  <h3 class="balance__caption">Особистісний розвиток</h3>
+                  <div class="balance__item--inner">
+                  <label for="Personaldevelopment" class="sliderAll">
+                    <input type=range value=0 min=0 max=10 step=1 id="Personaldevelopment">
+                  </label>
+                  <p>
+                    пояснення до пункту пояснення до пункту 
+                    пояснення до пункту пояснення до пункту 
+                    пояснення до пояснення до пункту пояснення 
+                    до пункту пояснення до пункту пояснення до пункту 
+                  </p>
+                  </div>
+                </li>
+                <li class="balance__item">
+                  <h3 class="balance__caption">Робота, бізнес</h3>
+                  <div class="balance__item--inner">
+                  <label for="Work" class="sliderAll">
+                    <input type=range value=0 min=0 max=10 step=1 id="Work">
+                  </label>
+                  <p>
+                    пояснення до пункту пояснення до пункту 
+                    пояснення до пункту пояснення до пункту 
+                    пояснення до пояснення до пункту пояснення 
+                    до пункту пояснення до пункту пояснення до пункту 
+                  </p>
+                  </div>
+                </li>
+                <li class="balance__item">
+                  <h3 class="balance__caption">Здоров'я, фізична активність</h3>
+                  <div class="balance__item--inner">
+                  <label for="Health" class="sliderAll">
+                    <input type=range value=0 min=0 max=10 step=1 id="Health">
+                  </label>
+                  <p>
+                    пояснення до пункту пояснення до пункту 
+                    пояснення до пункту пояснення до пункту 
+                    пояснення до пояснення до пункту пояснення 
+                    до пункту пояснення до пункту пояснення до пункту 
+                  </p>
+                  </div>
+                </li>
+                <li class="balance__item">
+                  <h3 class="balance__caption">Сім'я, відносини</h3>
+                  <div class="balance__item--inner">
+                  <label for="Famile" class="sliderAll">
+                    <input type=range value=0 min=0 max=10 step=1 id="Famile">
+                  </label>
+                  <p>
+                    пояснення до пункту пояснення до пункту 
+                    пояснення до пункту пояснення до пункту 
+                    пояснення до пояснення до пункту пояснення 
+                    до пункту пояснення до пункту пояснення до пункту 
+                  </p>
+                  </div>
+                </li>
+                <li class="balance__item">
+                  <h3 class="balance__caption">Фінанси</h3>
+                  <div class="balance__item--inner">
+                  <label for="Finances" class="sliderAll">
+                    <input type=range value=0 min=0 max=10 step=1 id="Finances">
+                  </label>
+                  <p>
+                    пояснення до пункту пояснення до пункту 
+                    пояснення до пункту пояснення до пункту 
+                    пояснення до пояснення до пункту пояснення 
+                    до пункту пояснення до пункту пояснення до пункту 
+                  </p>
+                  </div>
+                </li>
+                <li class="balance__item">
+                  <h3 class="balance__caption">Відпочинок, дозвілля</h3>
+                  <div class="balance__item--inner">
+                  <label for="Vacation" class="sliderAll">
+                    <input type=range value=0 min=0 max=10 step=1 id="Vacation">
+                  </label>
+                  <p>
+                    пояснення до пункту пояснення до пункту 
+                    пояснення до пункту пояснення до пункту 
+                    пояснення до пояснення до пункту пояснення 
+                    до пункту пояснення до пункту пояснення до пункту 
+                  </p>
+                  </div>
+                </li>
+                <li class="balance__item">
+                  <h3 class="balance__caption">Друзі, оточення</h3>
+                  <div class="balance__item--inner">
+                  <label for="Friends" class="sliderAll">
+                    <input type=range value=0 min=0 max=10 step=1 id="Friends">
+                  </label>
+                  <p>
+                    пояснення до пункту пояснення до пункту 
+                    пояснення до пункту пояснення до пункту 
+                    пояснення до пояснення до пункту пояснення 
+                    до пункту пояснення до пункту пояснення до пункту 
+                  </p>
+                  </div>
+                </li>
+                <li class="balance__item">
+                  <h3 class="balance__caption">Соціальні проекти</h3>
+                  <div class="balance__item--inner">
+                  <label for="Socialprojects" class="sliderAll">
+                    <input type=range value=0 min=0 max=10 step=1 id="Socialprojects">
+                  </label>
+                  <p>
+                    пояснення до пункту пояснення до пункту 
+                    пояснення до пункту пояснення до пункту 
+                    пояснення до пояснення до пункту пояснення 
+                    до пункту пояснення до пункту пояснення до пункту 
+                  </p>
+                  </div>
+                </li>
+                <!-- <li class="balance__item">
+                  <div class="balance__item--inner">
+                    <h3 class="balance__caption">Робота / бізнес</h3>
+                  <label for="Finance" class="sliderAll">
+                    <input type=range value=5 min=0 max=10 step=1 id="Finance">
+                  </label>
+                  </div>
+                  
+                  <div class="invisible balance__text">
+                    <p>
+                      пояснення до пункту пояснення до пункту 
+                      пояснення до пункту пояснення до пункту 
+                      пояснення до пояснення до пункту пояснення 
+                      до пункту пояснення до пункту пояснення до пункту 
+                    </p>
+                  </div>
+                </li> -->
+              </ul>
+          </div>
+            <div class="balance__box">
+              <div class="balance__img--wrapper"> 
+                <img src="./image.png" alt="" class="balance__img">
+              </div>
+              <canvas id="polarChart"></canvas>
+              <a href="" download>Зберегти</a>
+              <p>
+                Отже, колесо життєвого балансу – це ефективний і 
+                універсальний інструмент, який підійде кожному. 
+                За його допомогою можна визначити проблемні сфери 
+                свого життя, стабілізувати їх і таким чином 
+                стимулювати особистий розвиток. Скласти колесо 
+                життєвого балансу досить просто. Виділіть 20-30 
+                хвилин на опрацювання своїх проблем. Нехай це 
+                колесо допоможе побачити вам, над чим варто 
+                працювати у своєму житті. Як тільки ви почнете 
+                покращувати своє життя, колесо життєвого балансу 
+                закрутитися з особливою силою, приносячи вам достаток. 
+                Додатковим інструментом для цього стане наш бренд-бук. 
+                То ж продовжимо знайомитися з його можливостями! 
+              </p>
+            </div>
+          </div>
+      </div>
+    </section>
+  
+  <!-- <main>
+    
+     <div class="sliderHolder">
+      <div class="wheelCat">Citizenship</div>
+      <div class="sliderAll">
+        <div class="sliderCitizenship">
+          <input type=range value=1 min=0 max=8 step=1 id="Citizenship">
+        </div>
+      </div>
+      <br> 
+      
+      <div class="wheelCat">People</div>
+      <div class="sliderAll">
+        <div class="sliderPeople">
+          <input type=range value=1 min=0 max=8 step=1 id="People">
+        </div>
+      </div>
+      <br>
+  
+          <div class="wheelCat">Growth</div>
+      <div class="sliderAll">
+        <div class="sliderGrowth">
+          <input type=range value=1 min=0 max=8 step=1 id="Growth">
+        </div>
+      </div>
+      <br>
+      
+          <div class="wheelCat">Management</div>
+      <div class="sliderAll">
+        <div class="sliderManagement">
+          <input type=range value=1 min=0 max=8 step=1 id="Management">
+        </div>
+      </div>
+      <br>
+      
+      <div class="wheelCat">Relationships</div>
+      <div class="sliderAll">
+        <div class="sliderCitizenship">
+          <input type=range value=1 min=0 max=8 step=1 id="Relationships">
+        </div>
+      </div>
+      <br>
+      
+      <div class="wheelCat">Health</div>
+      <div class="sliderAll">
+        <div class="sliderHealth">
+          <input type=range value=1 min=0 max=8 step=1 id="Health">
+        </div>
+      </div>
+      <br>
+      
+      <div class="wheelCat">Wealth</div>
+      <div class="sliderAll">
+        <div class="sliderWealth">
+          <input type=range value=1 min=0 max=8 step=1 id="Wealth">
+        </div>
+      </div>
+      <br>
+      
+      <div class="wheelCat">Joy</div>
+      <div class="sliderAll">
+        <div class="sliderJoy">
+          <input type=range value=1 min=0 max=8 step=1 id="Joy">
+        </div>
+      </div>
+      <br>
+      
+    </div>
+    <div style="float:left;width:80%;">
+      //<canvas id="polarChart"></canvas>
+    </div>
+  </main> -->
+  </main>
+</body>
+
+
+
+<script>
+    var valueBubble = '<output class="rangeslider__value-bubble" />';
+
+function updateValueBubble(pos, value, context) {
+  pos = pos || context.position;
+  value = value || context.value;
+  var $valueBubble = $('.rangeslider__value-bubble', context.$range);
+  var tempPosition = pos + context.grabPos;
+  // var position = (tempPosition <= context.handleDimension) ? context.handleDimension : (tempPosition >= context.maxHandlePos) ? context.maxHandlePos : tempPosition;
+  var position = (tempPosition <= context.handleDimension) ? context.handleDimension-20 : (tempPosition >= context.maxHandlePos) ? context.maxHandlePos+5 : tempPosition-5;
+// console.log(tempPosition )
+// console.log(context.handleDimension )
+// console.log(context.maxHandlePos )
+  if ($valueBubble.length) {
+    $valueBubble[0].style.left = Math.ceil(position) + 'px';
+
+    $valueBubble[0].innerHTML = value;
+  }
+}
+
+$('input[type="range"]').rangeslider({
+  polyfill: false,
+  onInit: function() {
+    this.$range.append($(valueBubble));
+    updateValueBubble(null, null, this);
+  },
+  onSlide: function(pos, value) {
+      
+      let a ={
+        Personaldevelopment:0,
+        Work:1,
+        Health:2,
+        Famile:3,
+        Finances:4,
+        Vacation:5,
+        Friends:6,
+        Socialprojects:7
+      }
+      
+    updateValueBubble(pos, value, this);
+    updateChart(a[this.$element.attr('id')],value);
+    
+  }
+   
+    
+});
+
+function updateChart (location,value){
+    
+  myChart.data.datasets[0].data[location]=value;
+  myChart.update();  
+}
+
+var ctx = document.getElementById("polarChart").getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'polarArea',
+	data: {
+		labels: [
+    "Personaldevelopment",
+			"Work",
+			"Health",
+    "Famile",
+			"Finances",
+			"Vacation",
+			"Friends",
+			"Socialprojects",
+
+			// "Citizenship",
+			// "People",
+			// "Growth",
+			// "Management",
+			// "Relationships",
+			// "Health",
+			// "Wealth",
+			// "Joy"
+		],
+	datasets: [{
+		backgroundColor: [
+			"#00A3CE",
+			"#22CBED",
+			"#EB67A2",
+			"#FDA9ED",
+			"#EC5B22",
+			"#F78F21",
+			"#148F1E",
+			"#1EC428"
+		],
+    // borderColor: "red",
+    // borderWidth:2,
+		data: [0, 0,0,0,0,0,0,0,],
+	}],
+	},
+		options: {
+
+      elements: {
+				arc: {
+          // backgroundColor: "blue",
+					// borderColor: "blue",
+					// borderWidth:2   
+				}
+			},
+      
+			scale: {
+				ticks: {
+					// beginAtZero:false,
+					max: 10,
+					min: 0,
+					stepSize: 10,
+          maxTicksLimit: 1,
+					// fontFamily: "'Lato', sans-serif",
+					// fontSize:18,
+					// fontColor: "#000",
+					// display:true
+        display: false,
+
+				},
+				gridLines: {
+					// lineWidth:1,
+					// color:"#999"
+				},
+        
+        angleLines: {
+        // display: true,
+        display: false,
+        // color: 'red',
+        // width: 2,
+      },
+			},
+			layout: {
+				padding: {
+left: 10,
+					right: 10,
+					top:10,
+					bottom: 10
+
+					// left: 0,
+					// right: 340,
+					// top:89,
+					// bottom: 94
+          
+				}
+			},
+			legend: {
+				display: false,
+			// 	position: "right",
+        
+			// labels: {
+			// 	fontFamily: "'Lato', sans-serif",
+			// 	fontSize:18,
+			// 	fontColor: "#fff"
+			// }
+		},
+    
+	}
+});
+
+
+</script>
+<script src="./js/index.js"></script>
+
+</html>
