@@ -1,5 +1,7 @@
 const refs = {
   balanceList: document.querySelector(".balance__list"),
+  garnomyImgWrapper: document.querySelector(".garnomy__img--wrapper"),
+  garnomyInfoWrapper: document.querySelector(".garmony__info--wrapper"),
 };
 refs.balanceList.addEventListener("click", (e) => {
   if (e.target.classList.contains("balance__caption") && e.target.classList.contains("active")) {
@@ -16,3 +18,9 @@ refs.balanceList.addEventListener("click", (e) => {
     return;
   }
 });
+
+// const garmonyVisible = () => {
+//   console.log(refs.garnomyImgWrapper.offsetHeight);
+//   refs.garnomyInfoWrapper.style.height = refs.garnomyImgWrapper.offsetHeight + "px";
+// };
+// garmonyVisible();
