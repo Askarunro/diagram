@@ -14,6 +14,7 @@
   top: 129px;
   left: -4px;
 
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
 }
