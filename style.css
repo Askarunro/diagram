@@ -15,7 +15,8 @@
   left: -4px;
 
   left: 0;
-  top: 50%;
+  /* top: 50%; */
+  top: calc(50% - 2px);
   transform: translateY(-50%);
 }
 
@@ -176,6 +177,12 @@ p {
   flex-direction: column;
   grid-row-gap: 30px;
   margin-bottom: 30px;
+  transition: all 0.6s;
+}
+
+.garmony__info--wrapper.more {
+  height: fit-content;
+  overflow: visible;
 }
 
 @media screen and (min-width: 1200px) {
