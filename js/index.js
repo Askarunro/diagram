@@ -4,6 +4,7 @@ const refs = {
   garnomyImgWrapper: document.querySelector(".garnomy__img--wrapper"),
   garnomyInfoWrapper: document.querySelector(".garmony__info--wrapper"),
   balanceCaptions: document.querySelectorAll(".balance__caption"),
+  garmonyLink: document.querySelector(".garmony__link"),
 };
 // refs.balanceList.addEventListener("click", (e) => {
 //   // клік закриття
@@ -45,10 +46,41 @@ refs.balanceCaptions.forEach((item) => {
       item.nextElementSibling.style.maxHeight = item.nextElementSibling.scrollHeight + "px";
     }
   });
+  // item.addEventListener("oninput ", (e) => {
+  //   console.log(item.querySelector("input"));
+  // });
 });
 
-// const garmonyVisible = () => {
-//   console.log(refs.garnomyImgWrapper.offsetHeight);
-//   refs.garnomyInfoWrapper.style.height = refs.garnomyImgWrapper.offsetHeight + "px";
-// };
-// garmonyVisible();
+// refs.balanceItems.forEach((item) => {
+//   const input = item.querySelector(".rangeslider__value-bubble");
+//   console.log(input);
+//   input.addEventListener(
+//     "DOMCharacterDataModified",
+//     function (event) {
+//       console.log(hi);
+//     },
+//     false
+//   );
+// });
+
+// refs.balanceItems.forEach((item) => {
+//   const input = item.querySelector("input");
+//   console.log(input.value);
+//   input.addEventListener("input", (e) => {
+//     console.log("hi");
+//   });
+// });
+
+const garmonyVisible = () => {
+  console.log(refs.garnomyImgWrapper.offsetHeight);
+  const heightInfo = refs.garnomyInfoWrapper.offsetHeight;
+  refs.garnomyInfoWrapper.style.maxHeight = refs.garnomyImgWrapper.offsetHeight + "px";
+  refs.garnomyInfoWrapper.style.overflow = "hidden";
+  refs.garmonyLink.addEventListener("click", (e) => {
+    if (e.currentTarget) {
+      refs.garnomyInfoWrapper.style.maxHeight = heightInfo + "px";
+      refs.garnomyInfoWrapper.classList.toggle("more");
+    }
+  });
+};
+garmonyVisible();
