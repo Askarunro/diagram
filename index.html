@@ -108,8 +108,8 @@
                   </div>
                 </li> -->
                 <li class="balance__item">
-                  <h3 class="balance__caption">Особистісний розвиток</h3>
-                  <div class="balance__item--inner">
+                  <h3 class="balance__caption active">Особистісний розвиток <span></span></h3>
+                  <div class="balance__item--inner visible" style="max-height: fit-content">
                     <label for="Personaldevelopment" class="sliderAll">
                       <input type="range" value="0" min="0" max="10" step="1" id="Personaldevelopment" />
                     </label>
@@ -194,7 +194,7 @@
                   </div>
                 </li>
                 <li class="balance__item">
-                  <h3 class="balance__caption">Друзі, оточення</h3>
+                  <h3 class="balance__caption">Друзі, оточення<span class="balance__value"></span></h3>
                   <div class="balance__item--inner">
                     <label for="Friends" class="sliderAll">
                       <input type="range" value="0" min="0" max="10" step="1" id="Friends" />
@@ -208,7 +208,7 @@
                   </div>
                 </li>
                 <li class="balance__item">
-                  <h3 class="balance__caption">Соціальні проекти</h3>
+                  <h3 class="balance__caption">Соціальні проекти <span class="balance__value"></span></h3>
                   <div class="balance__item--inner">
                     <label for="Socialprojects" class="sliderAll">
                       <input type="range" value="0" min="0" max="10" step="1" id="Socialprojects" />
@@ -248,12 +248,18 @@
 
   <script>
     var valueBubble = '<output class="rangeslider__value-bubble" />';
-
     function updateValueBubble(pos, value, context) {
       pos = pos || context.position;
       value = value || context.value;
       var $valueBubble = $(".rangeslider__value-bubble", context.$range);
+      // var $balanceValue = $(".balance__value");
       var tempPosition = pos + context.grabPos;
+
+      // console.log(
+      //   context.$range.parents().map(function () {
+      //     console.log(this.closest(".balance__item"));
+      //   })
+      // );
       // var position = (tempPosition <= context.handleDimension) ? context.handleDimension : (tempPosition >= context.maxHandlePos) ? context.maxHandlePos : tempPosition;
       var position =
         tempPosition <= context.handleDimension
@@ -261,13 +267,15 @@
           : tempPosition >= context.maxHandlePos
           ? context.maxHandlePos + 5
           : tempPosition - 5;
-      // console.log(tempPosition )
-      // console.log(context.handleDimension )
-      // console.log(context.maxHandlePos )
       if ($valueBubble.length) {
         $valueBubble[0].style.left = Math.ceil(position) + "px";
-
         $valueBubble[0].innerHTML = value;
+
+        // $balanceValue[0].innerText = `${value}`;
+
+        // if (value) {
+        //   $balanceValue[0].innerText = `-${value}`;
+        // }
       }
     }
 
@@ -330,6 +338,7 @@
         // },
 
         scale: {
+          display: false,
           ticks: {
             // beginAtZero:false,
             max: 10,
@@ -355,27 +364,28 @@
           },
         },
         layout: {
-          padding: {
-            // left: 10,
-            // right: 10,
-            // top: 10,
-            // bottom: 10,
+          padding: 0,
+          // padding: {
+          //   // left: 10,
+          //   // right: 10,
+          //   // top: 10,
+          //   // bottom: 10,
 
-            // left: 5,
-            // right: 5,
-            // top: 5,
-            // bottom: 5,
+          //   // left: 5,
+          //   // right: 5,
+          //   // top: 5,
+          //   // bottom: 5,
 
-            left: 0,
-            right: 0,
-            top: 0,
-            bottom: 0,
+          //   left: 0,
+          //   right: 0,
+          //   top: 0,
+          //   bottom: 0,
 
-            // left: 0,
-            // right: 340,
-            // top:89,
-            // bottom: 94
-          },
+          //   // left: 0,
+          //   // right: 340,
+          //   // top:89,
+          //   // bottom: 94
+          // },
         },
         legend: {
           display: false,
