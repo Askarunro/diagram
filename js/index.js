@@ -78,8 +78,14 @@ const garmonyVisible = () => {
   refs.garnomyInfoWrapper.style.overflow = "hidden";
   refs.garmonyLink.addEventListener("click", (e) => {
     if (e.currentTarget) {
+      if (refs.garnomyInfoWrapper.classList.contains("more")) {
+        refs.garnomyInfoWrapper.style.maxHeight = refs.garnomyImgWrapper.offsetHeight + "px";
+        refs.garnomyInfoWrapper.classList.toggle("more");
+        return;
+      }
       refs.garnomyInfoWrapper.style.maxHeight = heightInfo + "px";
       refs.garnomyInfoWrapper.classList.toggle("more");
+      return;
     }
   });
 };
