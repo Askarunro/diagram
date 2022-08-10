@@ -74,13 +74,18 @@
         <div class="container">
           <div class="about-method__wrapper">
             <div class="about-method__box">
+              <h3 class="about-method__title">
+                Щоб оцінити, в якому стані знаходяться важливі для вас частини життя – скористайтеся цим інструментом.
+              </h3>
+            </div>
+            <!-- <div class="about-method__box">
               <h3 class="about-method__title">Метод «Колесо балансу життя»</h3>
               <p>
                 Приведення до ладу всіх сфер свого життя – то є запорука досягнення балансу, гармонії вашого життя, якими всі так марять. Щоб оцінити,
                 в якому стані знаходяться важливі для вас частини життя – скористайтеся цим інструментом.
               </p>
               <p>Колесо балансу життєвих цінностей – це методика аналізу та планування життя.</p>
-            </div>
+            </div> -->
             <div class="about-method__box">
               <h3 class="about-method__title">Як розраховувати «Коло» онлайн?</h3>
               <p>Коло розбиваємо на 8 секцій, як піцу. Кожен сектор – одна сфера життя, які мають велике значення для успішності та щастя.</p>
@@ -231,14 +236,26 @@
                 <canvas id="polarChart"></canvas>
               </div>
               <a href="javascript:void(0)" download class="balance__link">Зберегти</a>
-              <p class="balance__text">
-                Ви пройшли тест згідно «Колеса балансу». Зробіть скрін і збережіть фото. Не розчаровуйтеся,якщо в деяких категоріях ви не досягли
-                значних успіхів-перевага даного бізнес-посібника,дати Вам можливість кожен день ставати кращим та підвищувати свої показники. Виділіть
-                20-30 хвилин на опрацювання та обдумування «Колеса балансу». Нехай це колесо допоможе побачити вам, над чим варто працювати у своєму
-                житті. Як тільки ви почнете покращувати своє життя, колесо життєвого балансу закрутитися з особливою силою, приносячи вам достаток та
-                насолоду від зробленого та прожитого. Додатковим інструментом для цього стане цей бізнес-посібник. То ж продовжимо знайомитися з його
-                можливостями! В цьому Вам допоможе людина,яка дала Вам цей бізнес-посібник
-              </p>
+              <div class="balance__text--wrapper">
+                <p class="balance__text">
+                  Ви пройшли тест згідно «Колеса балансу». <br />
+                  Зробіть скрін і збережіть фото. <br />
+                  Не розчаровуйтеся,якщо в деяких категоріях ви не досягли значних успіхів-перевага даного бізнес-посібника,дати Вам можливість кожен
+                  день ставати кращим та підвищувати свої показники.
+                </p>
+                <p class="balance__text">
+                  Виділіть 20-30 хвилин на опрацювання та обдумування «Колеса балансу». Нехай це колесо допоможе побачити вам, над чим варто працювати
+                  у своєму житті.
+                </p>
+                <p class="balance__text">
+                  Як тільки ви почнете покращувати своє життя, колесо життєвого балансу закрутитися з особливою силою, приносячи вам достаток та
+                  насолоду від зробленого та прожитого.
+                </p>
+                <p class="balance__text">
+                  Додатковим інструментом для цього стане цей бізнес-посібник. То ж продовжимо знайомитися з його можливостями! В цьому Вам допоможе
+                  людина,яка дала Вам цей бізнес-посібник
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -252,15 +269,7 @@
       pos = pos || context.position;
       value = value || context.value;
       var $valueBubble = $(".rangeslider__value-bubble", context.$range);
-      // var $balanceValue = $(".balance__value");
       var tempPosition = pos + context.grabPos;
-
-      // console.log(
-      //   context.$range.parents().map(function () {
-      //     console.log(this.closest(".balance__item"));
-      //   })
-      // );
-      // var position = (tempPosition <= context.handleDimension) ? context.handleDimension : (tempPosition >= context.maxHandlePos) ? context.maxHandlePos : tempPosition;
       var position =
         tempPosition <= context.handleDimension
           ? context.handleDimension - 20
@@ -270,12 +279,6 @@
       if ($valueBubble.length) {
         $valueBubble[0].style.left = Math.ceil(position) + "px";
         $valueBubble[0].innerHTML = value;
-
-        // $balanceValue[0].innerText = `${value}`;
-
-        // if (value) {
-        //   $balanceValue[0].innerText = `-${value}`;
-        // }
       }
     }
 
@@ -329,63 +332,22 @@
         ],
       },
       options: {
-        // elements: {
-        //   arc: {
-        //     backgroundColor: "blue",
-        //     borderColor: "blue",
-        //     borderWidth: 2,
-        //   },
-        // },
-
         scale: {
           display: false,
           ticks: {
-            // beginAtZero:false,
             max: 10,
             min: 0,
             stepSize: 10,
             maxTicksLimit: 1,
-            // fontFamily: "'Lato', sans-serif",
-            // fontSize:18,
-            // fontColor: "#000",
-            // display:true
             display: false,
           },
-          gridLines: {
-            // lineWidth:1,
-            // color:"#999"
-          },
-
+          gridLines: {},
           angleLines: {
-            // display: true,
             display: false,
-            // color: 'red',
-            // width: 2,
           },
         },
         layout: {
           padding: 0,
-          // padding: {
-          //   // left: 10,
-          //   // right: 10,
-          //   // top: 10,
-          //   // bottom: 10,
-
-          //   // left: 5,
-          //   // right: 5,
-          //   // top: 5,
-          //   // bottom: 5,
-
-          //   left: 0,
-          //   right: 0,
-          //   top: 0,
-          //   bottom: 0,
-
-          //   // left: 0,
-          //   // right: 340,
-          //   // top:89,
-          //   // bottom: 94
-          // },
         },
         legend: {
           display: false,
