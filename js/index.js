@@ -50,3 +50,40 @@ const garmonyVisible = () => {
   });
 };
 garmonyVisible();
+
+// const input = document.querySelectorAll("input[type=range]");
+// console.log(input);
+// input.forEach((item) => {
+//   item.addEventListener("change", (e) => {
+//     console.log("hi");
+//   });
+// });
+// refs.balanceList.addEventListener("input", (e) => {
+//   console.log(e);
+// });
+
+// const test = document.querySelectorAll(".rangeslider__value-bubble");
+// test.forEach((target) => {
+//   // Конфигурация observer (за какими изменениями наблюдать)
+//   const config = {
+//     characterData: true,
+//   };
+
+//   // Колбэк-функция при срабатывании мутации
+//   const callback = function (mutationsList) {
+//     for (let mutation of mutationsList) {
+//       console.log(mutation);
+//       if (mutation.type === "characterData") {
+//         console.log("A child node has been added or removed.");
+//       }
+//     }
+//   };
+
+//   // Создаём экземпляр наблюдателя с указанной функцией колбэка
+//   const observer = new MutationObserver(callback);
+
+//   // Начинаем наблюдение за настроенными изменениями целевого элемента
+//   observer.observe(target, config);
+//   // Позже можно остановить наблюдение
+//   // observer.disconnect();
+// });
