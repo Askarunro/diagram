@@ -50,19 +50,3 @@ const garmonyVisible = () => {
   });
 };
 garmonyVisible();
-
-// refs.balanceLink.addEventListener("click", (e) => {
-//   // var a = document.createElement("a");
-//   // a.href = polarChart.toBase64Image();
-//   // a.download = "my_Wheel.png";
-//   // a.click();
-//   // const divContents = document.querySelector(".balance__box--inner").innerHTML;
-//   // console.log(divContents);
-//   // const a = window.open("", "", "height=500, width=500");
-//   // a.document.write("<html>");
-//   // a.document.write("<body> <h1>Div contents are <br>");
-//   // a.document.write(divContents);
-//   // a.document.write("</body></html>");
-//   // a.document.close();
-//   // a.print();
-// });
