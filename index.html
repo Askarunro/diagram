@@ -11,6 +11,12 @@
       crossorigin="anonymous"
     ></script>
 
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+      integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -212,7 +218,7 @@
               </ul>
             </div>
             <div class="balance__box">
-              <div class="balance__box--inner" style="position: relative">
+              <div class="balance__box--inner" id="divCanvas" style="position: relative">
                 <div class="balance__img--wrapper">
                   <img src="./image2.png" alt="" class="balance__img" />
                 </div>
@@ -254,7 +260,7 @@
       </section>
     </main>
   </body>
-
+  <script type="text/javascript" src="js/html2canvas.js"></script>
   <script>
     var valueBubble = '<output class="rangeslider__value-bubble" />';
     function updateValueBubble(pos, value, context) {
@@ -346,16 +352,20 @@
         },
       },
     });
-    document.getElementById("btn-download").onclick = function () {
-      // Trigger the download
-      var a = document.createElement("a");
-
-      // var b = $(".balance__box--inner");
-
-      a.href = myChart.toBase64Image();
-      a.download = "my_file_name.png";
-      a.click();
-    };
   </script>
   <script src="./js/index.js"></script>
+  <script type="text/javascript">
+    // аочати перетворення
+    $("#btn-download").click(function () {
+      convert();
+    });
+    function convert() {
+      html2canvas(document.querySelector("#divCanvas")).then((canvas) => {
+        // зберігаємо
+        canvas.toBlob(function (blob) {
+          saveAs(blob, "hangge.png");
+        });
+      });
+    }
+  </script>
 </html>
