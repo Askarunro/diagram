@@ -220,7 +220,7 @@
             <div class="balance__box">
               <div class="balance__box--inner" id="divCanvas" style="position: relative">
                 <div class="balance__img--wrapper">
-                  <img src="./image2.png" alt="" class="balance__img" />
+                  <img src="./image3.png" alt="" class="balance__img" />
                 </div>
                 <canvas id="polarChart"></canvas>
               </div>
@@ -361,11 +361,24 @@
     });
     function convert() {
       html2canvas(document.querySelector("#divCanvas")).then((canvas) => {
+        // canvas.appendChild(document.querySelector(".balance__list"));
         // зберігаємо
         canvas.toBlob(function (blob) {
           saveAs(blob, "hangge.png");
         });
       });
+      const values = [...document.querySelectorAll(".rangeslider__value-bubble")];
+      const titles = [...document.querySelectorAll(".balance__caption")];
+
+      // values.map((item) => {
+      //   console.log(indexOf(item));
+      // });
+      // test.forEach((item) => {
+      //   console.log(item.textContent);
+      // });
+      // title.forEach((item) => {
+      //   console.log(item.textContent);
+      // });
     }
   </script>
 </html>
