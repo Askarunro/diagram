@@ -102,7 +102,7 @@
             <div class="balance__box">
               <ul class="balance__list">
                 <li class="balance__item">
-                  <h3 class="balance__caption active">Особистісний розвиток <span></span></h3>
+                  <h3 class="balance__caption active">Особистісний розвиток <span class="balance__value"></span></h3>
                   <div class="balance__item--inner visible" style="max-height: fit-content">
                     <label for="Personaldevelopment" class="sliderAll">
                       <input type="range" value="0" min="0" max="10" step="1" id="Personaldevelopment" />
@@ -116,7 +116,7 @@
                   </div>
                 </li>
                 <li class="balance__item">
-                  <h3 class="balance__caption">Робота, бізнес</h3>
+                  <h3 class="balance__caption">Робота, бізнес <span class="balance__value"></span></h3>
                   <div class="balance__item--inner">
                     <label for="Work" class="sliderAll">
                       <input type="range" value="0" min="0" max="10" step="1" id="Work" />
@@ -130,7 +130,7 @@
                   </div>
                 </li>
                 <li class="balance__item">
-                  <h3 class="balance__caption">Здоров'я, фізична активність</h3>
+                  <h3 class="balance__caption">Здоров'я, фізична активність <span class="balance__value"></span></h3>
                   <div class="balance__item--inner">
                     <label for="Health" class="sliderAll">
                       <input type="range" value="0" min="0" max="10" step="1" id="Health" />
@@ -146,7 +146,7 @@
                   </div>
                 </li>
                 <li class="balance__item">
-                  <h3 class="balance__caption">Сім'я, відносини</h3>
+                  <h3 class="balance__caption">Сім'я, відносини <span class="balance__value"></span></h3>
                   <div class="balance__item--inner">
                     <label for="Famile" class="sliderAll">
                       <input type="range" value="0" min="0" max="10" step="1" id="Famile" />
@@ -160,7 +160,7 @@
                   </div>
                 </li>
                 <li class="balance__item">
-                  <h3 class="balance__caption">Фінанси</h3>
+                  <h3 class="balance__caption">Фінанси <span class="balance__value"></span></h3>
                   <div class="balance__item--inner">
                     <label for="Finances" class="sliderAll">
                       <input type="range" value="0" min="0" max="10" step="1" id="Finances" />
@@ -174,7 +174,7 @@
                   </div>
                 </li>
                 <li class="balance__item">
-                  <h3 class="balance__caption">Відпочинок, дозвілля</h3>
+                  <h3 class="balance__caption">Відпочинок, дозвілля <span class="balance__value"></span></h3>
                   <div class="balance__item--inner">
                     <label for="Vacation" class="sliderAll">
                       <input type="range" value="0" min="0" max="10" step="1" id="Vacation" />
@@ -188,7 +188,7 @@
                   </div>
                 </li>
                 <li class="balance__item">
-                  <h3 class="balance__caption">Друзі, оточення<span class="balance__value"></span></h3>
+                  <h3 class="balance__caption">Друзі, оточення <span class="balance__value"></span></h3>
                   <div class="balance__item--inner">
                     <label for="Friends" class="sliderAll">
                       <input type="range" value="0" min="0" max="10" step="1" id="Friends" />
@@ -196,8 +196,8 @@
                     <p>
                       Нас формує оточення, тому дуже важливо в житті оточувати себе людьми успіху.Не випадково говорять-з ким поведешся-від того і
                       наберешся. <br />
-                      В майбутньому ми запропонуємо Вам відвідувати цікаві заходи,форуми,конференції,де зможете познайомитися з
-                      цікавими,активними,позитивними та креативними людьми і стати для них добрими приятелями та друзями.
+                      В майбутньому ми запропонуємо Вам відвідувати цікаві заходи, форуми, конференції, де зможете познайомитися з цікавими,
+                      активними, позитивними та креативними людьми і стати для них добрими приятелями та друзями.
                     </p>
                   </div>
                 </li>
@@ -218,21 +218,19 @@
               </ul>
             </div>
             <div class="balance__box">
-              <div class="balance__box--inner" id="divCanvas" style="position: relative">
-                <div class="balance__img--wrapper">
-                  <img src="./image3.png" alt="" class="balance__img" />
+              <div id="divCanvas">
+                <div class="balance__box--inner" style="position: relative">
+                  <div class="balance__img--wrapper">
+                    <img src="./image3.png" alt="" class="balance__img" />
+                  </div>
+                  <canvas id="polarChart"></canvas>
                 </div>
-                <canvas id="polarChart"></canvas>
+                <div class="balance__result">
+                  <ul class="balance__result--list"></ul>
+                </div>
               </div>
+
               <a href="javascript:void(0)" class="balance__link" id="btn-download">Зберегти</a>
-              <!-- <input
-                class="balance__link"
-                type="button"
-                value="                Зберегти
-"
-                onclick="printDiv()"
-                style="text-align: center"
-              /> -->
 
               <div class="balance__text--wrapper">
                 <p class="balance__text">
@@ -263,7 +261,7 @@
   <script type="text/javascript" src="js/html2canvas.js"></script>
   <script>
     var valueBubble = '<output class="rangeslider__value-bubble" />';
-    function updateValueBubble(pos, value, context) {
+    function updateValueBubble(pos, value, context, valueclass) {
       pos = pos || context.position;
       value = value || context.value;
       var $valueBubble = $(".rangeslider__value-bubble", context.$range);
@@ -278,13 +276,17 @@
         $valueBubble[0].style.left = Math.ceil(position) + "px";
         $valueBubble[0].innerHTML = value;
       }
+      $valueBubble
+        .closest(".balance__item")
+        .find(".balance__value")
+        .html(" - " + value);
     }
 
     $('input[type="range"]').rangeslider({
       polyfill: false,
       onInit: function () {
         this.$range.append($(valueBubble));
-        updateValueBubble(null, null, this);
+        updateValueBubble(null, null, this, this);
       },
       onSlide: function (pos, value) {
         let a = {
@@ -307,7 +309,6 @@
       myChart.data.datasets[0].data[location] = value;
       myChart.update();
     }
-
     var ctx = document.getElementById("polarChart").getContext("2d");
     var myChart = new Chart(ctx, {
       type: "polarArea",
@@ -357,28 +358,30 @@
   <script type="text/javascript">
     // почати перетворення
     $("#btn-download").click(function () {
+      createResult();
       convert();
     });
+    // фіункція створення розмітки з
+    function createResult() {
+      const balanceList = document.querySelector(".balance__result--list");
+      const balanceResult = document.querySelector(".balance__result");
+      balanceResult.classList.add("view-result");
+      const titles = [...document.querySelectorAll(".balance__caption")];
+      const markup = titles.map((title) => `<li class="balance__result--item"><p>${title.innerHTML}</p></li>`).join("");
+      balanceList.insertAdjacentHTML("beforeend", markup);
+
+      setTimeout(() => {
+        balanceResult.classList.remove("view-result");
+        balanceList.innerHTML = "";
+      }, 5000);
+    }
     function convert() {
       html2canvas(document.querySelector("#divCanvas")).then((canvas) => {
-        // canvas.appendChild(document.querySelector(".balance__list"));
         // зберігаємо
         canvas.toBlob(function (blob) {
           saveAs(blob, "hangge.png");
         });
       });
-      const values = [...document.querySelectorAll(".rangeslider__value-bubble")];
-      const titles = [...document.querySelectorAll(".balance__caption")];
-
-      // values.map((item) => {
-      //   console.log(indexOf(item));
-      // });
-      // test.forEach((item) => {
-      //   console.log(item.textContent);
-      // });
-      // title.forEach((item) => {
-      //   console.log(item.textContent);
-      // });
     }
   </script>
 </html>
