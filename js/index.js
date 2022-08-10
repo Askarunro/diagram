@@ -5,6 +5,7 @@ const refs = {
   garnomyInfoWrapper: document.querySelector(".garmony__info--wrapper"),
   balanceCaptions: document.querySelectorAll(".balance__caption"),
   garmonyLink: document.querySelector(".garmony__link"),
+  balanceLink: document.querySelector(".balance__link"),
 };
 
 refs.balanceCaptions.forEach((item) => {
@@ -32,7 +33,6 @@ refs.balanceCaptions.forEach((item) => {
 });
 
 const garmonyVisible = () => {
-  console.log(refs.garnomyImgWrapper.offsetHeight);
   const heightInfo = refs.garnomyInfoWrapper.offsetHeight;
   refs.garnomyInfoWrapper.style.maxHeight = refs.garnomyImgWrapper.offsetHeight + "px";
   refs.garnomyInfoWrapper.style.overflow = "hidden";
@@ -50,3 +50,19 @@ const garmonyVisible = () => {
   });
 };
 garmonyVisible();
+
+// refs.balanceLink.addEventListener("click", (e) => {
+//   // var a = document.createElement("a");
+//   // a.href = polarChart.toBase64Image();
+//   // a.download = "my_Wheel.png";
+//   // a.click();
+//   // const divContents = document.querySelector(".balance__box--inner").innerHTML;
+//   // console.log(divContents);
+//   // const a = window.open("", "", "height=500, width=500");
+//   // a.document.write("<html>");
+//   // a.document.write("<body> <h1>Div contents are <br>");
+//   // a.document.write(divContents);
+//   // a.document.write("</body></html>");
+//   // a.document.close();
+//   // a.print();
+// });
