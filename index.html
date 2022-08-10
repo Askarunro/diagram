@@ -218,7 +218,16 @@
                 </div>
                 <canvas id="polarChart"></canvas>
               </div>
-              <a href="javascript:void(0)" download class="balance__link">Зберегти</a>
+              <a href="javascript:void(0)" class="balance__link" id="btn-download">Зберегти</a>
+              <!-- <input
+                class="balance__link"
+                type="button"
+                value="                Зберегти
+"
+                onclick="printDiv()"
+                style="text-align: center"
+              /> -->
+
               <div class="balance__text--wrapper">
                 <p class="balance__text">
                   Ви пройшли тест згідно «Колеса балансу». <br />
@@ -337,6 +346,16 @@
         },
       },
     });
+    document.getElementById("btn-download").onclick = function () {
+      // Trigger the download
+      var a = document.createElement("a");
+
+      // var b = $(".balance__box--inner");
+
+      a.href = myChart.toBase64Image();
+      a.download = "my_file_name.png";
+      a.click();
+    };
   </script>
   <script src="./js/index.js"></script>
 </html>
