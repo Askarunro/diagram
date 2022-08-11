@@ -34,15 +34,17 @@ refs.balanceCaptions.forEach((item) => {
 
 const garmonyVisible = () => {
   const heightInfo = refs.garnomyInfoWrapper.offsetHeight;
-  refs.garnomyInfoWrapper.style.maxHeight = refs.garnomyImgWrapper.offsetHeight + "px";
+  refs.garnomyInfoWrapper.style.maxHeight = refs.garnomyImgWrapper.offsetHeight-90 + "px";
   refs.garnomyInfoWrapper.style.overflow = "hidden";
   refs.garmonyLink.addEventListener("click", (e) => {
     if (e.currentTarget) {
       if (refs.garnomyInfoWrapper.classList.contains("more")) {
-        refs.garnomyInfoWrapper.style.maxHeight = refs.garnomyImgWrapper.offsetHeight + "px";
+        e.currentTarget.classList.toggle("more");
+        refs.garnomyInfoWrapper.style.maxHeight = refs.garnomyImgWrapper.offsetHeight-90 + "px";
         refs.garnomyInfoWrapper.classList.toggle("more");
         return;
       }
+      e.currentTarget.classList.toggle("more");
       refs.garnomyInfoWrapper.style.maxHeight = heightInfo + "px";
       refs.garnomyInfoWrapper.classList.toggle("more");
       return;
